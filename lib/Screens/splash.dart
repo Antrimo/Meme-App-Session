@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
+import 'package:meme/Screens/card.dart';
 
 class Splash extends StatefulWidget {
   const Splash({super.key});
@@ -12,7 +13,14 @@ class _SplashState extends State<Splash> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {},
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => const CardPage(),
+          ),
+        );
+      },
       child: Scaffold(
         backgroundColor: const Color.fromARGB(255, 26, 8, 133),
         body: Column(
