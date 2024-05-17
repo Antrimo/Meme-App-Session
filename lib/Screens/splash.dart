@@ -12,38 +12,35 @@ class Splash extends StatefulWidget {
 class _SplashState extends State<Splash> {
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () {
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => const CardPage(),
-          ),
-        );
-      },
-      child: Scaffold(
-        backgroundColor: const Color.fromARGB(255, 26, 8, 133),
-        body: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Center(
-              child: Lottie.asset(
+    return Scaffold(
+      backgroundColor: Colors.blue,
+      body: GestureDetector(
+        onTap: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => const CardPage(),
+            ),
+          );
+        },
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Lottie.asset(
                 'assets/splash.json',
                 height: 300,
                 width: 300,
               ),
-            ),
-            const Text(
-              "Welcome to Meme App",
-              style: TextStyle(
-                fontSize: 30,
-                color: Colors.white,
-                fontWeight: FontWeight.bold,
-                fontFamily: "Cursive",
-                fontStyle: FontStyle.italic,
-              ),
-            )
-          ],
+              const Text("Welcome to Meme App",
+                  style: TextStyle(
+                      fontSize: 30,
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                      fontFamily: "Cursive",
+                      fontStyle: FontStyle.italic)),
+            ],
+          ),
         ),
       ),
     );
